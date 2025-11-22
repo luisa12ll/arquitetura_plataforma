@@ -1,0 +1,7 @@
+{
+  "/vendas/nova/page": "app/vendas/nova/page.js",
+  "/reembolsos/novo/page": "app/reembolsos/novo/page.js",
+  "/page": "app/page.js",
+  "/reembolsos/page": "app/reembolsos/page.js",
+  "/relatorios/page": "app/relatorios/page.js"
+}
