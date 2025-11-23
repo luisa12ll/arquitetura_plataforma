@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { useAppContext } from "@/context/AppContext"
+import { useAppContext } from "@/app/context/AppContext"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -20,18 +20,26 @@ export default function LoginPage() {
 
     try {
       // Teste
-      const res = await fetch("http://localhost:3001/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      })
+//      const res = await fetch("http://localhost:3001/auth/login", {
+//        method: "POST",
+//        headers: { "Content-Type": "application/json" },
+//        body: JSON.stringify({ email, password }),
+//      })
 
-      if (!res.ok) throw new Error("Credenciais inválidas")
+//      if (!res.ok) throw new Error("Credenciais inválidas")
 
-      const data = await res.json()
+//      const data = await res.json()
 
       // Guarda usuário
-      setUserInfo(data.user)
+//      setUserInfo(data.user)
+
+      // login fake temporário
+        setUserInfo({
+        id: 1,
+        name: "João Silva",
+        email: email || "joao@example.com",
+        role: "admin"
+        })
 
       addNotification({ message: "Login realizado com sucesso!", type: "success" })
 
@@ -51,7 +59,7 @@ export default function LoginPage() {
 
         <form onSubmit={handleLogin} className="space-y-4">
           <Input 
-            placeholder="Email"
+            placeholder="Email (ex:qualquercoisa@gmail.com)"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"

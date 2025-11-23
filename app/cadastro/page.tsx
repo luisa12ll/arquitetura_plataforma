@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { useAppContext } from "@/context/AppContext"
+import { useAppContext } from "@/app/context/AppContext"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -20,13 +20,23 @@ export default function CadastroPage() {
     setIsLoading(true)
 
     try {
-      const res = await fetch("http://localhost:3001/auth/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password }),
+      //const res = await fetch("http://localhost:3001/auth/register", {
+        //method: "POST",
+        //headers: { "Content-Type": "application/json" },
+        //body: JSON.stringify({ name, email, password }),
+      //})
+
+       //if (!res.ok) throw new Error("Erro ao criar conta.")
+
+      //Teste da tela de cadastro
+      setUserInfo({
+      id: Date.now(),
+      name,
+      email,
+      role: "user"
       })
 
-      if (!res.ok) throw new Error("Erro ao criar conta.")
+      router.push("/")
 
       addNotification({ message: "Conta criada com sucesso!", type: "success" })
 
