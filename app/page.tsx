@@ -8,25 +8,39 @@ import { ArrowDown, ArrowUp, DollarSign, Package, Receipt, Users } from 'lucide-
 import { PageHeader } from "@/components/page-header"
 import { useAppContext } from "@/app/context/AppContext"
 import { useSPANavigation } from "@/hooks/use-spa-navigation"
+//adicionado para testar a tela de login
+import { useEffect } from "react"
+import { useRouter } from "next/navigation"
 
 export default function Dashboard() {
   const { addNotification, userInfo, setUserInfo } = useAppContext()
+
+//Adicionado para testar a tela de login
+  const router = useRouter()
+
+  useEffect(() => {
+  if (!userInfo) {
+    router.push("/login")
+  }
+  }, [userInfo, router])
+//Adicionado para testar a tela de login
   const { navigate } = useSPANavigation()
 
-  const handleWelcomeUser = () => {
-    if (!userInfo) {
-      setUserInfo({
-        id: "1",
-        name: "João Silva", 
-        email: "joao@empresa.com",
-        role: "admin"
-      })
-      addNotification({
-        type: "success",
-        message: "Bem-vindo ao Sistema ERP!"
-      })
-    }
-  }
+  //Comentado para testar a tela de login
+ // const handleWelcomeUser = () => {
+  //  if (!userInfo) {
+   //   setUserInfo({
+    //    id: "1",
+     //   name: "João Silva", 
+      //  email: "joao@empresa.com",
+       // role: "admin"
+     // })
+     // addNotification({
+      //  type: "success",
+       // message: "Bem-vindo ao Sistema ERP!"
+     // })
+   // }
+ // }
 
   const handleNavigateToReports = () => {
     navigate("/reembolsos", true)
@@ -39,9 +53,16 @@ export default function Dashboard() {
         description="Visão geral do desempenho da empresa"
         actions={
           <div className="flex gap-2">
-            <Button onClick={handleWelcomeUser}>
+            {/*Comentado para testar a tela de login*/}
+            {/* <Button onClick={handleWelcomeUser}> 
               {userInfo ? `Olá, ${userInfo.name}` : "Login"}
+            </Button> */}
+            {userInfo && (
+            <Button disabled>
+              {userInfo ? `Olá, ${userInfo.name}` : "Aguardando Login..."}
             </Button>
+            )} 
+
             <Button className="bg-orange-500 hover:bg-orange-600">Nova Transação</Button>
           </div>
         }

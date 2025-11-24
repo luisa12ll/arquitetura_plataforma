@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { PageHeader } from "@/components/page-header"
+import Link from "next/link"
 // Ícones específicos para métricas de clientes - cada um representa um aspecto diferente
 import { ArrowUp, ArrowDown, Users, UserPlus, Star, MapPin } from 'lucide-react'
 
@@ -21,7 +22,12 @@ export default function ClientesPage() {
         description="Gerencie e acompanhe todos os clientes"
         actions={
           <div className="flex gap-2">
-            <Button className="bg-orange-500 hover:bg-orange-600">Novo Cliente</Button>
+        <Button className="bg-orange-500 hover:bg-orange-600" asChild>
+        <Link href="/clientes/novo">
+        Novo Cliente
+        </Link>
+        </Button>
+
           </div>
         }
         breadcrumbs={[{ label: "Início", href: "/" }, { label: "Clientes" }]}
