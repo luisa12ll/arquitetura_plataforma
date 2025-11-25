@@ -1,5 +1,13 @@
 # Sistema ERP - Arquitetura SPA
 
+
+<div align="center">
+
+![Status](https://img.shields.io/badge/Status-Finalizado-green?style=flat-square)
+
+</div>
+
+
 ## Visão Geral
 
 Este projeto foi transformado em uma **Single-Page Application (SPA)** completa utilizando Next.js 15 com App Router. A aplicação oferece uma experiência de usuário fluida e reativa, mantendo estado global e navegação sem recarregamento de página.
@@ -181,22 +189,15 @@ export default function MinhaNovaPage() {
    http://localhost:3000
    ```
 
-### 🧪 Testando a Arquitetura SPA
+## Membros da Equipe
 
-1. **Navegue entre as páginas** usando os links da sidebar
-2. **Teste as notificações** clicando nos botões de demonstração
-3. **Observe o estado persistente** - informações ficam mantidas
-4. **Verifique os loading states** durante transições
-5. **Use o histórico do navegador** - funciona normalmente
-
-### 📈 Próximos Passos
-
-- [ ] Implementar cache de dados com React Query
-- [ ] Adicionar autenticação com estado persistente
-- [ ] Implementar offline-first com Service Workers
-- [ ] Adicionar animações de transição entre páginas
-- [ ] Implementar lazy loading para rotas
+<table>
+    <tr>
+    <td align="center"><a href="https://github.com/Dev-Gabriel-Lima"><img src="https://avatars.githubusercontent.com/u/156694363?v=4" width="200px;" alt=""/><br /><sub><b>Gabriel</b></sub></a><br />
+    <td align="center"><a href="https://github.com/JoaoPC10"><img src="https://avatars.githubusercontent.com/u/104221138?v=4" width="200px;" alt=""/><br /><sub><b>João Igor</b></sub></a><br />
+    <td align="center"><a href="https://github.com/luisa12ll"><img src="https://avatars.githubusercontent.com/u/194189725?v=4" width="200px;" alt=""/><br /><sub><b>Luisa de Souza</b></sub></a><br />
+    <td align="center"><a href="https://github.com/edumoisessilva"><img src="https://avatars.githubusercontent.com/u/185516590?v=4" width="200px;" alt=""/><br /><sub><b>Moisés</b></sub></a><br />  
+</table>
 
 ---
 
-**Desenvolvido com Next.js 15, TypeScript e Tailwind CSS**
